@@ -4,4 +4,4 @@ def complex_delete(a_dictionary, value):
     for n in dictionary_2:
         if value == a_dictionary.get(n):
             del a_dictionary[n]
-    return a_dictionary        
+    return a_dictionary
