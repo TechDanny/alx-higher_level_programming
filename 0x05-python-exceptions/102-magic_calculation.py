@@ -10,4 +10,4 @@ def magic_calculation(a, b):
         except Exception:
             reslt = a + b
             break
-    return(reslt)
+    return reslt
