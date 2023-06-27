@@ -13,22 +13,26 @@ class Square:
         private attribute
         """
         self.__size = size
+
     def area(self):
         """
         gets the area of square
         """
         return self.__size * self.__size
+
     @property
     def size(self):
         """
         gets the private attribute
         """
         return self.__size
+
     @size.setter
     def size(self, value):
         """
         square size
         """
+
         if isinstance(value, int):
             if value < 0:
                 raise ValueError("size must be >= 0")
