@@ -4,7 +4,7 @@ class definition
 """
 
 
-import match
+import math
 
 
 class MagicClass:
