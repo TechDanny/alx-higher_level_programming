@@ -11,23 +11,23 @@ class MagicClass:
     """
     instance attribute
     """
-    def __init__(self, rad=0):
+    def __init__(self, radius=0):
         """
         private key
         """
-        self.__rad = 0
-        if isinstance(rad, int) and isinstance(rad, float):
+        self.__radius = 0
+        if isinstance(radius, int) and isinstance(radius, float):
             raise TypeError("radius must be a number")
-        self.__rad = rad
+        self.__radius = radius
 
     def area(self):
         """
         calculates the area
         """
-        return self.__rad * self.__rad * math.pi
+        return self.__radius * self.__radius * math.pi
 
-    def circum(self):
+    def circumference(self):
         """
         calculates the circumference
         """
-        return 2 * math.pi * self.__rad
+        return 2 * math.pi * self.__radius
