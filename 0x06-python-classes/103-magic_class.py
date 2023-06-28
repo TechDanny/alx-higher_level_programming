@@ -16,7 +16,7 @@ class MagicClass:
         private key
         """
         self.__radius = 0
-        if isinstance(radius, int) and isinstance(radius, float):
+        if not isinstance(radius, int) and not isinstance(radius, float):
             raise TypeError("radius must be a number")
         self.__radius = radius
 
