@@ -2,6 +2,8 @@
 """
 create a rectangle class
 """
+
+
 class Rectangle:
     """
     create instance
