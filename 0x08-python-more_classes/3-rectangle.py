@@ -46,21 +46,24 @@ class Rectangle:
         """
         returns the area of rectangle
         """
-        return self.width * self.height
+        return self.__width * self.__height
 
     def perimeter(self):
         """
         returns the perimeter of rectangle
         """
-        return self.width + self.height + self.width + self.height
+        if self.__height == 0 or self.__width == 0:
+            return 0
+        else:
+            return self.__width + self.__height + self.__width + self.__height
 
     def __str__(self):
         """
         prints rectangle with character #
         """
-        if self.height == 0 or self.width == 0:
+        if self.__height == 0 or self.__width == 0:
             return ""
         str_rec = ""
-        for i in range(self.height):
-            str_rec = str_rec + "#" * self.width + "\n"
+        for i in range(self.__height):
+            str_rec = str_rec + "#" * self.__width + "\n"
         return str_rec
