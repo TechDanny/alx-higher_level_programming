@@ -5,7 +5,7 @@ import sys
 def position(brd, row, col):
     for m in range(col):
         if brd[row][m] == 1:
-            return false
+            return False
 
     m = row
     n = col
@@ -22,7 +22,7 @@ def position(brd, row, col):
             return False
         m = m + 1
         n = n - 1
-    return False
+    return True
 
 
 def crack_n_queens(brd, col):
@@ -49,7 +49,7 @@ def get_solve():
         print()
 
 
-len(sys.argv) != 2:
+if len(sys.argv) != 2:
     print("Usage: nqueens N")
     sys.exit(1)
 try:
