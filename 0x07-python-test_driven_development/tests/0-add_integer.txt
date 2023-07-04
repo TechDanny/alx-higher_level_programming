@@ -1,0 +1,52 @@
+"0-add_integer" module
+======================
+
+using "0-add_integer"
+---------------------
+
+import function from the module:
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+Test case: add 1 and 2
+Input: add_integer(1, 2)
+Expected output: 3
+
+Test case: add 100 and -2
+Input: add_integer(100, -2)
+Expected output: 98
+
+Test case: add 2
+Input: add_integer(2, 98)
+Expected output: 100
+
+Test case: add 100.3 and -2
+Input: add_integer(100.3, -2)
+Expected output: 98
+
+Test case: add integer and string
+Input: add_integer(4, "School")
+Expected output: TypeError: b must be an integer
+
+Test case: add None
+Input: add_integer(None)
+Expected output: TypeError: a must be an integer
+
+Test case: add two letters
+Input: add_integer("2", "3")
+Expected output: TypeError: a must be an integer
+
+Test case: add tuple
+Input: add_integer((3, 3))
+Expected output: TypeError: a must be an integer
+
+Test case: add integer and list
+Input: add_integer(4, [])
+Expected output: TypeError: b must be an integer
+
+Test case: passing a string
+Input: add_integer("cat")
+Expected output: TypeError: a must be an integer
+
+Test case: add two float numbers
+Input: add_integer(1.4, 1.4)
+Expected output: 2
