@@ -1,0 +1,24 @@
+matrix_divided(matrix, div)
+---------------------------
+
+Divides all elements of a matrix by a specified number.
+
+Parameters:
+- matrix (list of lists): The matrix containing integers or floats.
+- div (int or float): The number to divide the elements of the matrix by.
+
+Returns:
+- list of lists: A new matrix with all elements divided by the specified number, rounded to 2 decimal places.
+
+Raises:
+- TypeError: If the matrix is not a valid matrix (list of lists) of integers/floats,
+  if each row of the matrix doesn't have the same size, or if div is not a number.
+- ZeroDivisionError: If div is equal to 0.
+
+Example usage:
+---------------
+>>> matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+>>> div = 2
+>>> result = matrix_divided(matrix, div)
+>>> print(result)
+[[0.5, 1.0, 1.5], [2.0, 2.5, 3.0], [3.5, 4.0, 4.5]]
