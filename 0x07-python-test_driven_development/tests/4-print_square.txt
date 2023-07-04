@@ -1,0 +1,34 @@
+print_square(size)
+------------------
+
+Prints a square using the character '#'.
+
+Parameters:
+- size (int): The size length of the square.
+
+Raises:
+- TypeError: If `size` is not an integer or if it's a float less than 0.
+- ValueError: If `size` is less than 0.
+
+Example usage:
+--------------
+>>> print_square(4)
+####
+####
+####
+
+>>> print_square(6)
+######
+######
+######
+######
+######
+
+>>> print_square(0)
+
+>>> print_square(8.9)
+TypeError: size must be an integer
+
+>>> print_square(-7)
+ValueError: size must be >= 0
+
