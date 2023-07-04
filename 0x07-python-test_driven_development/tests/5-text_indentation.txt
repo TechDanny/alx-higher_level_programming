@@ -1,0 +1,26 @@
+text_indentation(text)
+----------------------
+
+Prints a text with two new lines after each occurrence of the characters '.', '?' and ':'.
+
+Parameters:
+- text (str): The input text.
+
+Raises:
+- TypeError: If `text` is not a string.
+
+Example usage:
+--------------
+>>> text_indentation("Hello. What's your name? Nice to meet you: Text indentation.")
+Hello
+What's your name?
+
+Nice to mmet you
+
+Text indentation
+
+>>> text_indentation("This text has no special characters")
+This text has no special characters
+
+>>> text_indentation("")
+
