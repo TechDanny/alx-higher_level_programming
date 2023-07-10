@@ -5,6 +5,9 @@ define a class
 
 
 class BaseGeometry:
+    """
+    define a function
+    """
     def area(self):
         """
         raised an exception error
