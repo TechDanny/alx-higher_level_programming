@@ -34,4 +34,7 @@ def get_status():
 
 
 if __name__ == "__main__":
+    """
+    print return status
+    """
     get_status()
