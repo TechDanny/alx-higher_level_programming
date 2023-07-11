@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+define a function
+"""
+
+
 import sys
 
 
