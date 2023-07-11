@@ -17,7 +17,7 @@ class Student:
         """
         retrieves dict representation
         """
-        if attrs == None:
+        if attrs is None:
             return self.__dict__
         my_dict = {}
         for x in attrs:
@@ -26,6 +26,7 @@ class Student:
             except FileNotFoundError:
                 pass
         return my_dict
+
     def reload_from_json(self, json):
         """
         replaces all the attributes of student instance
