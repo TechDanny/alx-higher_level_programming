@@ -100,3 +100,22 @@ class Rectangle(Base):
         """
         return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
                 self.id, self.__x, self.__y, self.__width, self.__height)
+
+    def update(self, *args):
+        """
+        assigns an argument to each attribute
+        """
+        if args:
+            for n in range(len(args)):
+                if n == 0:
+                    if not isinstance(args[n], int):
+                        raise TypeError("id must be an integer")
+                    self.id = args[n]
+                elif n == 1:
+                    self.__width = args[n]
+                elif n == 2:
+                    self.__height = args[n]
+                elif n == 3:
+                    self.__x = args[n]
+                elif n == 4:
+                    self.__y = args[n]
