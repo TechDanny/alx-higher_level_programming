@@ -5,6 +5,7 @@ create a class
 
 
 import json
+import locale
 
 
 class Base:
@@ -35,3 +36,17 @@ class Base:
            for n in list_dictionaries):
             raise TypeError("list_dictionaries must be a list of dictionaries")
         return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """
+        writes the JSON string representation
+        of list objs to a file
+        """
+        fn = cls.__name__ + ".json"
+        with open(fn, "w", encoding=locale.getpreferredencoding()) as f:
+            if list_objs is None:
+                f.write("[]")
+            else:
+                my_list = [n.to_dictionary() for n in list_objs]
+                f.write(Base.to_json_string(my_list))
