@@ -73,3 +73,16 @@ class Base:
                 new_update = cls(1)
             new_update.update(**dictionary)
             return new_update
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        returns a list of instances
+        """
+        fn = str(cls.__name__) + ".json"
+        try:
+            with open(fn, "r", encoding=locale.getpreferredencoding()) as f:
+                my_list = Base.from_json_string(f.read())
+                return [cls.create(**n) for n in my_list]
+        except IOError:
+            return []
