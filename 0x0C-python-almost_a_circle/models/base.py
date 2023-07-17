@@ -5,6 +5,7 @@ create a class
 
 
 import json
+import csv
 import locale
 
 
@@ -84,5 +85,42 @@ class Base:
             with open(fn, "r", encoding=locale.getpreferredencoding()) as f:
                 my_list = Base.from_json_string(f.read())
                 return [cls.create(**n) for n in my_list]
+        except IOError:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        serializes comma separated value (CSV)
+        """
+        fn = cls.__name__ + ".csv"
+        with open(fn, "w", newline="") as f:
+            if list_objs is None or list_objs == []:
+                f.write("[]")
+            else:
+                if cls.__name__ == "Rectangle":
+                    shape_name = ["id", "width", "height", "x", "y"]
+                else:
+                    shape_name = ["id", "size", "x", "y"]
+                shape_writer = csv.DictWriter(f, fieldnames=shape_name)
+                for n in list_objs:
+                    shape_writer.writerow(n.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        deserializes a comma seperated value(CSV)
+        """
+        fn = cls.__name__ + ".csv"
+        try:
+            with open(fn, "r", newline="") as f:
+                if cls.__name__ == "Rectangle":
+                    shape_name = ["id", "width", "height", "x", "y"]
+                else:
+                    shape_name = ["id", "size", "x", "y"]
+                my_list = csv.DictReader(f, fieldnames=shape_name)
+                my_list = [dict([n, int(m)] for n, m in x.items())
+                           for x in my_list]
+                return [cls.create(**x) for x in my_list]
         except IOError:
             return []
