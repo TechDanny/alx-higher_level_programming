@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+lists all states from database
+"""
+
 
 if __name__ == "__main__":
     from sys import argv
