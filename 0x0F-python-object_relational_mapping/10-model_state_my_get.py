@@ -21,7 +21,7 @@ if __name__ == "__main__":
         if argv[4] == states.name:
             print("{}".format(states.id))
             break
-        else:
+    else:
             print("Not found")
 
     get_session.close()
