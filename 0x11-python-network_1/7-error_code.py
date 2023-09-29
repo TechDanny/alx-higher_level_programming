@@ -4,7 +4,7 @@ Takes in url, sends a request to the url and displays the body of the response
 """
 
 
-from sys import argv[1]
+from sys import argv
 import requests
 
 
